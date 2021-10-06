@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637690608052762179
-    m_Hash: 3820802615
+      ticks: 637691571690590443
+    m_Hash: 1584356593
   m_LockFileStatus:
     m_FilePath: D:/GitHub/Juegos-Web-Grupo-H/proyect/Spellers/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637690608351265421
-    m_Hash: 2562350359
+      ticks: 637691571690590443
+    m_Hash: 1130423807
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
