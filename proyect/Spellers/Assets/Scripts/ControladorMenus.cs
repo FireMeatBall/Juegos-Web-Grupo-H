@@ -11,6 +11,7 @@ public class ControladorMenus : MonoBehaviour
     
     public GameObject menuPrincipal;
     public GameObject menuJugar;
+    public GameObject menuColeccion;
     public GameObject menuOpciones;
     public GameObject menuCreditos;
 
@@ -31,6 +32,10 @@ public class ControladorMenus : MonoBehaviour
     void Start()
     {
         menuPrincipal.SetActive(true);
+        menuJugar.SetActive(false);
+        menuColeccion.SetActive(false);
+        menuOpciones.SetActive(false);
+        menuCreditos.SetActive(false);
         fuentePequeña = fuentePequeñaObj.GetComponent<Toggle>();
         fuenteMediana = fuenteMedianaObj.GetComponent<Toggle>();
         fuenteGrande = fuenteGrandeObj.GetComponent<Toggle>();
@@ -62,6 +67,12 @@ public class ControladorMenus : MonoBehaviour
         menuPrincipal.SetActive(false);
     }
 
+    public void clickColeccion()
+    {
+        menuColeccion.SetActive(true);
+        menuPrincipal.SetActive(false);
+    }
+
     public void clickOpciones()
     {
         menuOpciones.SetActive(true);
@@ -84,6 +95,7 @@ public class ControladorMenus : MonoBehaviour
     {
         menuPrincipal.SetActive(true);
         menuJugar.SetActive(false);
+        menuColeccion.SetActive(false);
         menuOpciones.SetActive(false);
         menuCreditos.SetActive(false);
     }
