@@ -53,10 +53,8 @@
     <UnityVersion>2020.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\ClickAndDragCamera.cs" />
-    <Compile Include="Assets\Scripts\InputManager.cs" />
-    <Compile Include="Assets\Scripts\ControladorMenus.cs" />
-    <Compile Include="Assets\Scripts\Input\InputPlayerMap.cs" />
+    <Compile Include="Assets\Scripts\UI\ControladorMenus.cs" />
+    <Compile Include="Assets\Scripts\UI\LevelSelector.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -712,6 +710,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Inputmanagement.csproj">
+      <Project>{FC7468AD-9BE4-BAF9-9019-C861F1854AB6}</Project>
+      <Name>Inputmanagement</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
