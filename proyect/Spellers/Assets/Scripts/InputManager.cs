@@ -2,40 +2,60 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using System;
 
 public class InputManager : MonoBehaviour
 {
-    public enum ArrowType
+    private InputPlayerMap map;
+    private InputAction click;
+    private InputAction position;
+
+    private bool isDragging;
+    private Vector2 mousePos;
+
+    public Action<Vector2> OnPress, OnDrag, OnRelease;
+
+    private void Awake()
     {
-        left = 0,
-        up = 1,
-        right = 2
+        map = new InputPlayerMap();
     }
 
-    public Text text;
-
-    public void OnClickKey(int index)
+    private void OnEnable()
     {
-        text.text = "Key " + index;
+        click = map.Player.Click;
+        click.started += Press;
+        click.canceled += Release;
+        click.Enable();
+
+        position = map.Player.Position;
+        position.performed += Move;
+        position.Enable();
     }
 
-    public void OnClickArrow(int type)
+    private void Move(InputAction.CallbackContext ctx)
     {
-        text.text = "Arrow " + ((ArrowType) type).ToString();
+        mousePos = ctx.ReadValue<Vector2>();
+        if (isDragging)
+            OnDrag?.Invoke(mousePos);
     }
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)){
-            OnClickArrow(0);
-        }
-        else if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            OnClickArrow(1);
-        }
-        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            OnClickArrow(2);
-        }
+    public void Press(InputAction.CallbackContext ctx)
+    {       
+        isDragging = true;
+        OnPress?.Invoke(mousePos);
     }
+
+    private void Release(InputAction.CallbackContext ctx)
+    {        
+        isDragging = false;
+        OnRelease?.Invoke(mousePos);
+    }
+
+    private void OnDisable()
+    {
+        click.Disable();
+        position.Disable();
+    }
+
 }

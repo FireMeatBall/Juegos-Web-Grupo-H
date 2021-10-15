@@ -1,31 +1,50 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Camera))]
 public class ClickAndDragCamera : MonoBehaviour
-{
+{ 
     #region Scene References
     [SerializeField] private RectTransform tf_panel;
+    [SerializeField] private InputManager inputManager;
     [Range(0, 100)]
     [SerializeField] private float speed = 20f;
     #endregion
 
     #region Private Fields
-    private Vector2 minPos, maxPos;
-    private Vector3 clickWorldPos, dragWorldPos;
+    private Rect cameraWorldRect;
+    private Vector2 minPos, maxPos, clickPos;
+    private Vector3 startPos, delta;
+    private bool isFocused;
     #endregion
 
     #region UnityEvents
-    private void OnEnable()
+    private void Awake()
     {
         SetBounds();
+        startPos = transform.position;
+        cameraWorldRect = new Rect(minPos, maxPos - minPos);
+    }
+
+    private void OnEnable()
+    {
+        inputManager.OnPress += SetStartPos;
+        inputManager.OnDrag += SetCurrentPos;
+    }
+
+    private void OnDisable()
+    {
+        inputManager.OnPress -= SetStartPos;
+        inputManager.OnDrag -= SetCurrentPos;
     }
 
     private void LateUpdate()
     {
-        HandleMouseInput();
+        
     }
     #endregion
 
@@ -37,39 +56,42 @@ public class ClickAndDragCamera : MonoBehaviour
         Vector2 camSize = cam.rect.size * cam.orthographicSize * new Vector2(cam.aspect, 1);
         minPos = tf_panel.rect.position + camSize;
         maxPos = minPos + tf_panel.rect.size - 2f * camSize;
-    }
+    }    
 
-    private void HandleMouseInput()
-    {
-        Vector3 newPos = transform.position;
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (GetMouseWorldPosition(out Vector3 mousePos))
-            {
-                clickWorldPos = mousePos;
-            }
-        }
-        else if (Input.GetMouseButton(0))
-        {
-            if (GetMouseWorldPosition(out Vector3 mousePos))
-            {
-                dragWorldPos = mousePos;
-                newPos = transform.position + clickWorldPos - dragWorldPos;
-            }
-        }
-        newPos.x = Mathf.Clamp(newPos.x, minPos.x, maxPos.x);
-        newPos.y = Mathf.Clamp(newPos.y, minPos.y, maxPos.y);
-        transform.position = Vector3.Lerp(newPos, transform.position, Time.deltaTime * 5f);
-    }
-
-    private static bool GetMouseWorldPosition(out Vector3 mousePos)
+    private static Vector3 GetMouseWorldPosition(Vector3 mousePos)
     {
         Plane plane = new Plane(Vector3.back, Vector2.zero);
-        Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-        bool hit = (plane.Raycast(mouseRay, out float dist));
-        mousePos = mouseRay.GetPoint(dist);
-        return hit;
+        Ray mouseRay = Camera.main.ScreenPointToRay(mousePos);
+        plane.Raycast(mouseRay, out float dist);
+        return mouseRay.GetPoint(dist);
     }
+
+    private void SetStartPos(Vector2 pos) {
+        delta = Vector3.zero;
+        clickPos = pos;
+        //Debug.Log("CLICK: " + clickPos);        
+        startPos = transform.position;        
+    }
+    private void SetCurrentPos(Vector2 pos)
+    {
+        delta = pos - clickPos;
+        //Debug.Log("DELTA: " + delta);
+        MoveCamera();
+    }
+
+    private void MoveCamera()
+    {
+        Vector3 newPos = startPos - delta * 0.02f;
+        newPos.x = Mathf.Clamp(newPos.x, minPos.x, maxPos.x);
+        newPos.y = Mathf.Clamp(newPos.y, minPos.y, maxPos.y);
+        transform.position = newPos;   
+    }
+
+    public void FocusMap()
+    {
+        isFocused = true;
+    }
+
     #endregion
 }
 

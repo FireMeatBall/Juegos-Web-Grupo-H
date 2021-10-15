@@ -1,0 +1,52 @@
+{
+    "name": "InputPlayerMap",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "913c0a4a-fd40-4af9-b034-d02fa6102a3e",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "710a2474-9594-4b04-9934-661209fbc563",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Position",
+                    "type": "Value",
+                    "id": "7286bbc7-b37a-4bf4-aa69-21da8ab58e90",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "336d7cf9-f03d-4dd3-bea0-bcb667e73bb9",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8c567257-90ee-4ed1-b7e6-ec4dfd5b8d49",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
