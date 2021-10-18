@@ -53,8 +53,9 @@
     <UnityVersion>2020.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\UI\ControladorMenus.cs" />
     <Compile Include="Assets\Scripts\UI\LevelSelector.cs" />
+    <Compile Include="Assets\Scripts\UI\ControladorMenus.cs" />
+    <Compile Include="Assets\Scripts\Levels\LevelInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -3,15 +3,16 @@ using UnityEngine;
 
 public class LevelSelector : MonoBehaviour
 {
-    private int level;
+    private LevelInfo levelInfo;
 
-    public Text text;
+    public Text levelNameText, levelNumberText;
+  
     
-    public void SelectLevel(int n)
+    public void SelectLevel(LevelInfo level)
     {
-        Debug.Log("Level " + n + " selected");
-        level = n;
-        text.text = "Nivel " + n;
+        levelInfo = level;
+        levelNameText.text = level.levelname;
+        levelNumberText.text = "Nivel " + level.number;
     }
 
 
