@@ -1,0 +1,17 @@
+{
+    "name": "UIManagement",
+    "rootNamespace": "",
+    "references": [
+        "Runtime",
+        "GameManagement"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
