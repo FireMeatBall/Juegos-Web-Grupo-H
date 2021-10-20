@@ -54,14 +54,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\UI\LevelSelector.cs" />
-    <Compile Include="Assets\Scripts\UI\ControladorMenus.cs" />
     <Compile Include="Assets\Scripts\UI\View.cs" />
-    <Compile Include="Assets\Scripts\UI\ViewManager.cs" />
-    <Compile Include="Assets\Scripts\UI\MainMenuView.cs" />
     <Compile Include="Assets\Scripts\UI\SettingsView.cs" />
-    <Compile Include="Assets\Scripts\UI\PlayModeView.cs" />
-    <Compile Include="Assets\Scripts\UI\ColectionView.cs" />
+    <Compile Include="Assets\Scripts\UI\ViewManager.cs" />
     <Compile Include="Assets\Scripts\UI\CreditsView.cs" />
+    <Compile Include="Assets\Scripts\UI\ControladorMenus.cs" />
+    <Compile Include="Assets\Scripts\UI\PlayModeView.cs" />
+    <Compile Include="Assets\Scripts\UI\MainMenuView.cs" />
+    <Compile Include="Assets\Scripts\UI\ColectionView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\UI\UIManagement.asmdef" />

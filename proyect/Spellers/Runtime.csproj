@@ -53,8 +53,8 @@
     <UnityVersion>2020.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Runtime\LevelInfo.cs" />
     <Compile Include="Assets\Scripts\Runtime\SkinInfo.cs" />
+    <Compile Include="Assets\Scripts\Runtime\LevelInfo.cs" />
     <Compile Include="Assets\Scripts\Runtime\SkinDataBase.cs" />
   </ItemGroup>
   <ItemGroup>
