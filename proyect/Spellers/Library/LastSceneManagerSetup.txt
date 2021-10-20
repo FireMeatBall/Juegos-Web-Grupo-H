@@ -1,6 +1,10 @@
 sceneSetups:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 - path: Assets/Scenes/ModoHistoria.unity
+=======
+- path: Assets/Scenes/GUITest.unity
+>>>>>>> Stashed changes
 =======
 - path: Assets/Scenes/GUITest.unity
 >>>>>>> Stashed changes
