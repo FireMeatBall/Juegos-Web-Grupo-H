@@ -5,22 +5,13 @@ using UnityEngine.SceneManagement;
 
 namespace GameManagement
 {
-    public class GameManager : MonoBehaviour
+    public class GameManager : Singleton<GameManager>
     {
-        private static GameManager instance;
-
-        public void Awake() => instance = this;
 
         public static void LoadScene(string scene)
         {
             SceneManager.LoadScene(scene);
         }
-
-        private void Start()
-        {
-            DontDestroyOnLoad(this);
-        }
-
 
     } 
 }

@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inputmanagement", "Inputmanagement.csproj", "{FC7468AD-9BE4-BAF9-9019-C861F1854AB6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Runtime.CombatSystem", "Runtime.CombatSystem.csproj", "{A4C680A9-74BE-33AC-53AC-AB18971149B9}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIManagement", "UIManagement.csproj", "{0BF67A5B-8B1A-A674-F8C4-8D8F7AA10920}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Runtime", "Runtime.csproj", "{CAA14417-89AF-7A75-9952-9C8920136153}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameManagement", "GameManagement.csproj", "{3A57339E-C60C-4150-98C5-70FB972F3720}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Runtime.CombatSystem", "Runtime.CombatSystem.csproj", "{A4C680A9-74BE-33AC-53AC-AB18971149B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameManagement.PlayerManagement", "GameManagement.PlayerManagement.csproj", "{5D46046F-E8CA-EC52-2BF8-97186C9FA2B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{FC7468AD-9BE4-BAF9-9019-C861F1854AB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC7468AD-9BE4-BAF9-9019-C861F1854AB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC7468AD-9BE4-BAF9-9019-C861F1854AB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4C680A9-74BE-33AC-53AC-AB18971149B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4C680A9-74BE-33AC-53AC-AB18971149B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4C680A9-74BE-33AC-53AC-AB18971149B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4C680A9-74BE-33AC-53AC-AB18971149B9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0BF67A5B-8B1A-A674-F8C4-8D8F7AA10920}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0BF67A5B-8B1A-A674-F8C4-8D8F7AA10920}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BF67A5B-8B1A-A674-F8C4-8D8F7AA10920}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,10 +39,10 @@ Global
 		{3A57339E-C60C-4150-98C5-70FB972F3720}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A57339E-C60C-4150-98C5-70FB972F3720}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A57339E-C60C-4150-98C5-70FB972F3720}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A4C680A9-74BE-33AC-53AC-AB18971149B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A4C680A9-74BE-33AC-53AC-AB18971149B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A4C680A9-74BE-33AC-53AC-AB18971149B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A4C680A9-74BE-33AC-53AC-AB18971149B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D46046F-E8CA-EC52-2BF8-97186C9FA2B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D46046F-E8CA-EC52-2BF8-97186C9FA2B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D46046F-E8CA-EC52-2BF8-97186C9FA2B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D46046F-E8CA-EC52-2BF8-97186C9FA2B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

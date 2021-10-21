@@ -1,6 +1,12 @@
-﻿namespace Runtime.CombatSystem
+﻿using UnityEngine;
+using System.Collections.Generic;
+using Runtime.CombatSystem.Spells;
+using System;
+
+namespace Runtime.CombatSystem
 {
-    internal class SpellDeck
+    public class SpellDeck
     {
+        public HashSet<Spell> spells;
     }
 }

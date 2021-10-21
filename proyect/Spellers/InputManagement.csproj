@@ -53,13 +53,13 @@
     <UnityVersion>2020.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\InputManagement\InputPlayerMap.cs" />
-    <Compile Include="Assets\Scripts\InputManagement\ClickAndDragCamera.cs" />
-    <Compile Include="Assets\Scripts\InputManagement\InputManager.cs" />
-    <Compile Include="Assets\Scripts\InputManagement\TestInput.cs" />
+    <Compile Include="Assets\Scripts\GameManagement\InputManagement\InputPlayerMap.cs" />
+    <Compile Include="Assets\Scripts\GameManagement\InputManagement\TestInput.cs" />
+    <Compile Include="Assets\Scripts\GameManagement\InputManagement\ClickAndDragCamera.cs" />
+    <Compile Include="Assets\Scripts\GameManagement\InputManagement\InputManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Scripts\InputManagement\Inputmanagement.asmdef" />
+    <None Include="Assets\Scripts\GameManagement\InputManagement\Inputmanagement.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

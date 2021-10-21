@@ -53,7 +53,7 @@
     <UnityVersion>2020.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\CreditsView.cs" />
+    <Compile Include="Assets\Scripts\PlayerManagement\PlayerManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -709,21 +709,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Inputmanagement.csproj">
-      <Project>{FC7468AD-9BE4-BAF9-9019-C861F1854AB6}</Project>
-      <Name>Inputmanagement</Name>
-    </ProjectReference>
-    <ProjectReference Include="UIManagement.csproj">
-      <Project>{0BF67A5B-8B1A-A674-F8C4-8D8F7AA10920}</Project>
-      <Name>UIManagement</Name>
+    <ProjectReference Include="Runtime.csproj">
+      <Project>{CAA14417-89AF-7A75-9952-9C8920136153}</Project>
+      <Name>Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="GameManagement.csproj">
       <Project>{3A57339E-C60C-4150-98C5-70FB972F3720}</Project>
       <Name>GameManagement</Name>
     </ProjectReference>
-    <ProjectReference Include="Runtime.csproj">
-      <Project>{CAA14417-89AF-7A75-9952-9C8920136153}</Project>
-      <Name>Runtime</Name>
+    <ProjectReference Include="Runtime.CombatSystem.csproj">
+      <Project>{A4C680A9-74BE-33AC-53AC-AB18971149B9}</Project>
+      <Name>Runtime.CombatSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="UIManagement.csproj">
+      <Project>{0BF67A5B-8B1A-A674-F8C4-8D8F7AA10920}</Project>
+      <Name>UIManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="Inputmanagement.csproj">
+      <Project>{FC7468AD-9BE4-BAF9-9019-C861F1854AB6}</Project>
+      <Name>Inputmanagement</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -56,7 +56,6 @@
     <Compile Include="Assets\Scripts\Runtime\SkinInfo.cs" />
     <Compile Include="Assets\Scripts\Runtime\LevelInfo.cs" />
     <Compile Include="Assets\Scripts\Runtime\SkinDataBase.cs" />
-    <Compile Include="Assets\Scripts\Runtime\CombatSystem\SpellerStats.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Runtime\Runtime.asmdef" />

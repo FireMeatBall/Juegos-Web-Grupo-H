@@ -6,14 +6,14 @@ namespace Runtime.CombatSystem
 {
     public class Speller : MonoBehaviour
     {
-        private SpellerStats playerstats;
-        private SpellDeck deck;
-
+        public SpellerStats playerstats;
+        public SpellTable table;
 
         // Start is called before the first frame update
         void Start()
         {
-
+            //table = new SpellTable();
+            playerstats = new SpellerStats();
         }
     } 
 }

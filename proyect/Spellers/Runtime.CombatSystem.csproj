@@ -54,9 +54,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Runtime\CombatSystem\SpellerStats.cs" />
-    <Compile Include="Assets\Scripts\Runtime\CombatSystem\Spell.cs" />
     <Compile Include="Assets\Scripts\Runtime\CombatSystem\Speller.cs" />
+    <Compile Include="Assets\Scripts\Runtime\CombatSystem\SpellTable.cs" />
     <Compile Include="Assets\Scripts\Runtime\CombatSystem\SpellDeck.cs" />
+    <Compile Include="Assets\Scripts\Runtime\CombatSystem\Spells\IMultitargetSpell.cs" />
+    <Compile Include="Assets\Scripts\Runtime\CombatSystem\Spells\Spell.cs" />
+    <Compile Include="Assets\Scripts\Runtime\CombatSystem\Spells\AttackSpell.cs" />
+    <Compile Include="Assets\Scripts\Runtime\CombatSystem\Spells\SacrificeSpell.cs" />
+    <Compile Include="Assets\Scripts\Runtime\CombatSystem\Spells\IOffensiveSpell.cs" />
+    <Compile Include="Assets\Scripts\Runtime\CombatSystem\Spells\IDefensiveSpell.cs" />
+    <Compile Include="Assets\Scripts\Runtime\CombatSystem\Spells\HealingSpell.cs" />
+    <Compile Include="Assets\Scripts\Runtime\CombatSystem\Board.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Runtime\CombatSystem\Runtime.CombatSystem.asmdef" />
