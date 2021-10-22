@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace Runtime.CombatSystem
 {
+    [System.Serializable]
     public class SpellerStats
     {
-
         #region Fields
         const int MAX_LVL = 3;
         const int MIN_LVL = -3;
@@ -18,6 +18,13 @@ namespace Runtime.CombatSystem
         private int atqLvl;
         private int defLvl;
         private int healingLvl;
+
+        public delegate void OnChangeHealthEvent(int health);
+        public event OnChangeHealthEvent OnChangeHealth;
+
+        public delegate void OnChangeShieldEvent(int shield);
+        public event OnChangeShieldEvent OnChangeShield;
+
         #endregion
 
         #region Properties
@@ -29,6 +36,8 @@ namespace Runtime.CombatSystem
             {
                 int clampedValue = Mathf.Clamp(value, 0, MAX_HEALTH);
                 healthPoints = clampedValue;
+                OnChangeHealth?.Invoke(healthPoints);
+                Debug.Log("OnChangeHealthEvent -> " + healthPoints);
             }
         }
 
@@ -39,6 +48,8 @@ namespace Runtime.CombatSystem
             {
                 int clampedValue = Mathf.Clamp(value, 0, MAX_SHIELD);
                 shieldPoints = clampedValue;
+                OnChangeShield?.Invoke(shieldPoints);
+    
             }
         }
 
@@ -79,10 +90,14 @@ namespace Runtime.CombatSystem
         public SpellerStats()
         {
             healthPoints = MAX_HEALTH;
-            shieldPoints = 0;
-            atqLvl = 0;
-            defLvl = 0;
-            healingLvl = 0;
+        }
+
+        public SpellerStats(int health, int atq = 0, int def = 0, int healing = 0)
+        {
+            healthPoints = health;
+            atqLvl = atq;
+            defLvl = def;
+            healingLvl = healing;
         }
     }
 

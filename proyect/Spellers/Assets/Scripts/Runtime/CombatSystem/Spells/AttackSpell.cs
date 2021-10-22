@@ -12,7 +12,7 @@ namespace Runtime.CombatSystem.Spells
         public void useOnTarget(Speller target)
         {
             int points = (int)(BASE + INCREMENT * lvl);
-            target.playerstats.Health -= points;
+            target.stats.Health -= points;
         }
     }
 
