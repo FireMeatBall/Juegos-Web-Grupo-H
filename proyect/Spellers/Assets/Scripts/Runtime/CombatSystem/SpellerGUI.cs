@@ -17,7 +17,7 @@ namespace Runtime.CombatSystem
         void Start()
         {
             speller = GetComponent<Speller>();
-            stats = speller.stats;
+            stats = speller.Stats;
             stats.OnChangeHealth += (int value) => ChangeHealthText(value.ToString());
         }
 

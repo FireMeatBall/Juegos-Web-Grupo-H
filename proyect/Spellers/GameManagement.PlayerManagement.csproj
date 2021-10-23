@@ -656,9 +656,9 @@
       <Project>{A4C680A9-74BE-33AC-53AC-AB18971149B9}</Project>
       <Name>Runtime.CombatSystem</Name>
     </ProjectReference>
-    <ProjectReference Include="GameManagement.csproj">
-      <Project>{3A57339E-C60C-4150-98C5-70FB972F3720}</Project>
-      <Name>GameManagement</Name>
+    <ProjectReference Include="Utils.csproj">
+      <Project>{13A79C8E-C2C1-EE5A-9173-9AB5B9555D79}</Project>
+      <Name>Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

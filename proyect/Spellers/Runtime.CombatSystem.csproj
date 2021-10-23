@@ -56,17 +56,11 @@
     <Compile Include="Assets\Scripts\Runtime\CombatSystem\SpellerStats.cs" />
     <Compile Include="Assets\Scripts\Runtime\CombatSystem\Speller.cs" />
     <Compile Include="Assets\Scripts\Runtime\CombatSystem\SpellTable.cs" />
-    <Compile Include="Assets\Scripts\Runtime\CombatSystem\SpellDeck.cs" />
-    <Compile Include="Assets\Scripts\Runtime\CombatSystem\Spells\IMultitargetSpell.cs" />
     <Compile Include="Assets\Scripts\Runtime\CombatSystem\Board.cs" />
-    <Compile Include="Assets\Scripts\Runtime\CombatSystem\Spells\Spell.cs" />
-    <Compile Include="Assets\Scripts\Runtime\CombatSystem\Spells\AttackSpell.cs" />
-    <Compile Include="Assets\Scripts\Runtime\CombatSystem\Spells\SacrificeSpell.cs" />
-    <Compile Include="Assets\Scripts\Runtime\CombatSystem\Spells\IOffensiveSpell.cs" />
-    <Compile Include="Assets\Scripts\Runtime\CombatSystem\Spells\IDefensiveSpell.cs" />
-    <Compile Include="Assets\Scripts\Runtime\CombatSystem\Spells\HealingSpell.cs" />
     <Compile Include="Assets\Scripts\Runtime\CombatSystem\SpellerGUI.cs" />
     <Compile Include="Assets\Scripts\Runtime\CombatSystem\SpellerPlayer.cs" />
+    <Compile Include="Assets\Scripts\Runtime\CombatSystem\SpellTableGUI.cs" />
+    <Compile Include="Assets\Scripts\Runtime\CombatSystem\SpellerNPC.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Runtime\CombatSystem\Runtime.CombatSystem.asmdef" />
@@ -665,6 +659,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="SpellSystem.csproj">
+      <Project>{6D5F44CC-3663-F1C5-3005-273DFCA34E6E}</Project>
+      <Name>SpellSystem</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

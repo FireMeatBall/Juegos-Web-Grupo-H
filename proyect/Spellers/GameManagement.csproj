@@ -54,8 +54,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameManagement\GameManager.cs" />
-    <Compile Include="Assets\Scripts\GameManagement\PlayerManagement\PlayerManager.cs" />
-    <Compile Include="Assets\Scripts\GameManagement\Singleton.cs" />
+    <Compile Include="Assets\Scripts\GameManagement\BattleSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\GameManagement\GameManagement.asmdef" />
@@ -657,6 +656,10 @@
     <ProjectReference Include="Runtime.CombatSystem.csproj">
       <Project>{A4C680A9-74BE-33AC-53AC-AB18971149B9}</Project>
       <Name>Runtime.CombatSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="Utils.csproj">
+      <Project>{13A79C8E-C2C1-EE5A-9173-9AB5B9555D79}</Project>
+      <Name>Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -267,8 +267,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 651595837554206612}
-  - component: {fileID: 651595837554206613}
-  - component: {fileID: 651595837554206615}
+  - component: {fileID: 3147089172842698617}
+  - component: {fileID: 3829618639980194475}
   m_Layer: 0
   m_Name: Speller NPC
   m_TagString: Untagged
@@ -291,7 +291,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &651595837554206613
+--- !u!114 &3147089172842698617
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -300,10 +300,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 651595837554206614}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c9a41d29e58b744d939a60caf175875, type: 3}
+  m_Script: {fileID: 11500000, guid: 6908b2f10da9e2d4fb3830c9b740cca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &651595837554206615
+  spells_list: []
+--- !u!114 &3829618639980194475
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -317,7 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   txt_name: {fileID: 651595836598644571}
   txt_health: {fileID: 651595836874748854}
-  speller: {fileID: 651595837554206613}
+  speller: {fileID: 3147089172842698617}
 --- !u!1 &651595837579450019
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,7 +441,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 651595837554206613}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Runtime.CombatSystem.Speller, Runtime.CombatSystem
         m_MethodName: TestStats
         m_Mode: 1
