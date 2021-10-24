@@ -9,53 +9,75 @@ namespace Runtime.CombatSystem
     [SerializeField]
     public class SpellTable
     {
-        private int selectedSpell;
+        #region Fields and events
+        private const int NUM_SLOTS = 3;
+
         private List<Spell> spellSlots;
         private SpellDeck deck;
-        private Board board;
+        private int selectedSlotIdx;
 
-        public delegate void OnChangeSlotEvent(int id, Spell spell);
+        public delegate void OnChangeSlotEvent(int id, string spellString);
         public OnChangeSlotEvent OnChangeSlot;
+
+        public delegate void OnSelectSlotEvent();
+        public OnSelectSlotEvent OnSelectSlot;
+
+        #endregion
+
+        #region Constructor
 
         public SpellTable(SpellDeck deck)
         {
             this.deck = deck;
-            spellSlots = new List<Spell>(3);
+        }
+
+        #endregion
+
+        #region public Methods        
+
+        // Selecciona el hechizo 
+        public void SelectSpellSlot(int idx)
+        {
+            Debug.Log("Select slot " + idx);
+            selectedSlotIdx = idx;
+            OnSelectSlot?.Invoke();
+        }
+
+        // Devuelve el hechizo seleccionado
+        public Spell GetSelectedSpell()
+        {
+             return spellSlots[selectedSlotIdx];
+        }
+
+        // Carga los hechizos iniciales
+        public void Initialize()
+        {
             GenerateSpellSlots();
         }
+        #endregion
 
+        #region private Methods
 
-        public void GenerateSpellSlots()
+        // Coloca 3 hechizos aleatorios del mazo del jugador a la mesa
+        private void GenerateSpellSlots()
         {
-            spellSlots.Clear();
             var rand = new System.Random();
-            spellSlots.AddRange(deck.spells.OrderBy(x => rand.Next()).Take(3));
-            OnChangeSlot?.Invoke(0, spellSlots[0]);
-            OnChangeSlot?.Invoke(1, spellSlots[1]);
-            OnChangeSlot?.Invoke(2, spellSlots[2]);
-
+            spellSlots = new List<Spell>(deck.spells.OrderBy(x => rand.Next()).Take(NUM_SLOTS));
+            for (int i = 0; i < NUM_SLOTS; i++)
+            {
+                OnChangeSlot?.Invoke(i, spellSlots[i].ToString());
+            }
         }
 
-        public void SelectSlot(int n)
+        // Cambia el hechizo de la posición idx de la mesa
+        private void ChangeSpellSlot(int idx)
         {
-            Debug.Log("Player -> Select spell nº" + n + " ( " + spellSlots[n].spellName + " " + spellSlots[n].lvl + ")");
-            selectedSpell = n;
+            spellSlots[idx] = deck.spells[new System.Random().Next(deck.spells.Count)];
+            OnChangeSlot?.Invoke(idx, spellSlots[idx].ToString());
         }
 
-        public Spell UseSpell()
-        {
-            Spell s = spellSlots[selectedSpell];
-            spellSlots[selectedSpell] = deck.spells[new System.Random().Next(deck.spells.Count)];
-            OnChangeSlot?.Invoke(selectedSpell, spellSlots[selectedSpell]);
-            return s;
-        }
+        #endregion
 
-        public void UpdateUI()
-        {
-            OnChangeSlot?.Invoke(0, spellSlots[0]);
-            OnChangeSlot?.Invoke(1, spellSlots[1]);
-            OnChangeSlot?.Invoke(2, spellSlots[2]);
-        }
 
     }
 }

@@ -53,8 +53,7 @@
     <UnityVersion>2020.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\SpellSystem\Spell.cs" />
-    <Compile Include="Assets\Scripts\SpellSystem\ScriptableObjectIDAttribute.cs" />
+    <Compile Include="Assets\Board.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -718,6 +717,10 @@
       <Project>{3A57339E-C60C-4150-98C5-70FB972F3720}</Project>
       <Name>GameManagement</Name>
     </ProjectReference>
+    <ProjectReference Include="SpellSystem.csproj">
+      <Project>{6D5F44CC-3663-F1C5-3005-273DFCA34E6E}</Project>
+      <Name>SpellSystem</Name>
+    </ProjectReference>
     <ProjectReference Include="Runtime.CombatSystem.csproj">
       <Project>{A4C680A9-74BE-33AC-53AC-AB18971149B9}</Project>
       <Name>Runtime.CombatSystem</Name>
@@ -726,13 +729,13 @@
       <Project>{0BF67A5B-8B1A-A674-F8C4-8D8F7AA10920}</Project>
       <Name>UIManagement</Name>
     </ProjectReference>
-    <ProjectReference Include="GameManagement.PlayerManagement.csproj">
-      <Project>{5D46046F-E8CA-EC52-2BF8-97186C9FA2B5}</Project>
-      <Name>GameManagement.PlayerManagement</Name>
-    </ProjectReference>
     <ProjectReference Include="Inputmanagement.csproj">
       <Project>{FC7468AD-9BE4-BAF9-9019-C861F1854AB6}</Project>
       <Name>Inputmanagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="Utils.csproj">
+      <Project>{13A79C8E-C2C1-EE5A-9173-9AB5B9555D79}</Project>
+      <Name>Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

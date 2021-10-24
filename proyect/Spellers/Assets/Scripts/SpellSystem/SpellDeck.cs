@@ -23,9 +23,5 @@ namespace SpellSystem
             spells.Add(spell);
         }
 
-        public void AddSpell(int idx)
-        {
-            spells.Add(SpellManager.GetSpell(idx));
-        }
     }
 }

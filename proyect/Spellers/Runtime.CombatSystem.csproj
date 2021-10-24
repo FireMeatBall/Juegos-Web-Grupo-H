@@ -54,13 +54,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Runtime\CombatSystem\SpellerStats.cs" />
-    <Compile Include="Assets\Scripts\Runtime\CombatSystem\Speller.cs" />
+    <Compile Include="Assets\Scripts\Runtime\CombatSystem\Spellers\Speller.cs" />
     <Compile Include="Assets\Scripts\Runtime\CombatSystem\SpellTable.cs" />
     <Compile Include="Assets\Scripts\Runtime\CombatSystem\Board.cs" />
-    <Compile Include="Assets\Scripts\Runtime\CombatSystem\SpellerGUI.cs" />
-    <Compile Include="Assets\Scripts\Runtime\CombatSystem\SpellerPlayer.cs" />
     <Compile Include="Assets\Scripts\Runtime\CombatSystem\SpellTableGUI.cs" />
-    <Compile Include="Assets\Scripts\Runtime\CombatSystem\SpellerNPC.cs" />
+    <Compile Include="Assets\Scripts\Runtime\CombatSystem\SpellerGUI.cs" />
+    <Compile Include="Assets\Scripts\Runtime\CombatSystem\SpellBoard.cs" />
+    <Compile Include="Assets\Scripts\Runtime\CombatSystem\Spellers\SpellerPlayer.cs" />
+    <Compile Include="Assets\Scripts\Runtime\CombatSystem\BattleHUB.cs" />
+    <Compile Include="Assets\Scripts\Runtime\CombatSystem\Spellers\SpellerNPC.cs" />
+    <Compile Include="Assets\Scripts\Runtime\CombatSystem\SpellBoardGUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Runtime\CombatSystem\Runtime.CombatSystem.asmdef" />

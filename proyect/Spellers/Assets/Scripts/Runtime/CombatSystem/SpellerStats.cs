@@ -8,16 +8,12 @@ namespace Runtime.CombatSystem
     public class SpellerStats
     {
         #region Fields
-        const int MAX_LVL = 3;
-        const int MIN_LVL = -3;
-        const int MAX_HEALTH = 100;
-        const int MAX_SHIELD = 50;
 
         private int healthPoints;
         private int shieldPoints;
-        private int atqLvl;
-        private int defLvl;
-        private int healingLvl;
+
+        private readonly int maxHealthPoints;
+        private readonly int maxShieldPoints;
 
         public delegate void OnChangeHealthEvent(int health);
         public event OnChangeHealthEvent OnChangeHealth;
@@ -34,10 +30,9 @@ namespace Runtime.CombatSystem
             get => healthPoints;
             set
             {
-                int clampedValue = Mathf.Clamp(value, 0, MAX_HEALTH);
+                int clampedValue = Mathf.Clamp(value, 0, maxHealthPoints);
                 healthPoints = clampedValue;
                 OnChangeHealth?.Invoke(healthPoints);
-                Debug.Log("OnChangeHealthEvent -> " + healthPoints);
             }
         }
 
@@ -46,58 +41,30 @@ namespace Runtime.CombatSystem
             get => shieldPoints;
             set
             {
-                int clampedValue = Mathf.Clamp(value, 0, MAX_SHIELD);
+                int clampedValue = Mathf.Clamp(value, 0, maxShieldPoints);
                 shieldPoints = clampedValue;
                 OnChangeShield?.Invoke(shieldPoints);
     
             }
         }
 
-        private int AttackLevel
-        {
-            get => atqLvl;
-            set
-            {
-                int clampedValue = Mathf.Clamp(value, MIN_LVL, MAX_LVL);
-                atqLvl = clampedValue;
-            }
-        }
-
-        private int DefenseLevel
-        {
-            get => defLvl;
-            set
-            {
-                int clampedValue = Mathf.Clamp(value, MIN_LVL, MAX_LVL);
-                shieldPoints = clampedValue;
-            }
-        }
-
-        private int HealingLevel
-        {
-            get => healingLvl;
-            set
-            {
-                int clampedValue = Mathf.Clamp(value, MIN_LVL, MAX_LVL);
-                healingLvl = clampedValue;
-            }
-        }
-
-        public int MAXHEALTH => MAX_HEALTH;
+        public int MaxHealth => maxHealthPoints;
+        public int MaxShield => maxShieldPoints;
 
         #endregion
 
-        public SpellerStats()
+        public SpellerStats(int health, int maxShield = 50)
         {
-            healthPoints = MAX_HEALTH;
+            maxHealthPoints = health;
+            maxShieldPoints = maxShield;
+            healthPoints = health;
+            shieldPoints = 0;
         }
 
-        public SpellerStats(int health, int atq = 0, int def = 0, int healing = 0)
+
+        public void GetDamage(int n)
         {
-            healthPoints = health;
-            atqLvl = atq;
-            defLvl = def;
-            healingLvl = healing;
+            Health -= n;
         }
     }
 

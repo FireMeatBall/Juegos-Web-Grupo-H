@@ -8,19 +8,40 @@ namespace Runtime.CombatSystem
 {
     public class SpellTableGUI : MonoBehaviour
     {
-        public List<Text> txt_spells;
-        public SpellTable spellTable;
+        public GameObject pnl_table;
+        public GameObject pnl_board;
+        public SpellerPlayer speller;
+        public List<Button> spellSlotButtons;
 
-        public void Start()
+        public void Awake()
         {
-            spellTable = gameObject.GetComponent<SpellerPlayer>().table;
-            spellTable.OnChangeSlot += SetSpellText;
-            spellTable.UpdateUI();
+            for (int i = 0; i < spellSlotButtons.Count; i++)
+            {
+                // Esto evita un error que no entiendo
+                int idx = i;
+                spellSlotButtons[i].onClick.AddListener(() => speller.SelectSpell(idx));
+            }
+            EnableTablePanel();
+            speller.board.OnCompleteWordEvent += EnableTablePanel;
+            speller.table.OnSelectSlot += EnableBoardPanel;
+            speller.table.OnChangeSlot += SetText;
+        }        
+
+        private void EnableTablePanel()
+        {
+            pnl_board.SetActive(false);
+            pnl_table.SetActive(true);
         }
 
-        public void SetSpellText(int n, Spell spell)
+        private void EnableBoardPanel()
         {
-            txt_spells[n].text = spell.ToString();
+            pnl_board.SetActive(true);
+            pnl_table.SetActive(false);
+        }
+
+        private void SetText(int idx, string text)
+        {
+            spellSlotButtons[idx].GetComponentInChildren<Text>().text = text;
         }
     }
 
